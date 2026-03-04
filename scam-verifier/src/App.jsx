@@ -13,7 +13,7 @@ export default function App() {
   return (
     <div style={{ background: '#080808', minHeight: '100vh', color: '#f5f0e8' }}>
       <Navbar onAnalyze={go} />
-      <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '100px 64px 64px', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '80px 64px 40px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle, #1e1e1e 1px, transparent 1px)', backgroundSize: '28px 28px', opacity: 0.6 }} />
         <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center', position: 'relative', zIndex: 1 }}>
           <div>
@@ -22,15 +22,15 @@ export default function App() {
                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#e63946', display: 'inline-block' }} />Cyber Threat Detection
               </span>
             </div>
-            <h1 style={{ fontFamily: 'Playfair Display,serif', fontSize: 'clamp(44px,5.5vw,72px)', fontWeight: 700, lineHeight: 1.08, color: '#f5f0e8', marginBottom: 28, letterSpacing: '-0.02em' }}>
+            <h1 style={{ fontFamily: 'Playfair Display,serif', fontSize: 'clamp(44px,5.5vw,72px)', fontWeight: 700, lineHeight: 1.08, color: '#f5f0e8', marginBottom: 20, letterSpacing: '-0.02em' }}>
               Your campus.<br /><em style={{ fontStyle: 'italic', color: '#e63946' }}>Their target.</em><br />Our shield.
             </h1>
-            <p style={{ fontFamily: 'Sora,sans-serif', fontSize: 16, lineHeight: 1.75, color: '#9a9489', marginBottom: 36, maxWidth: 440 }}>
+            <p style={{ fontFamily: 'Sora,sans-serif', fontSize: 16, lineHeight: 1.75, color: '#9a9489', marginBottom: 28, maxWidth: 440 }}>
               CampusGuard catches fake internship offers, WhatsApp payment traps, and phishing emails — before you pay. Built on real attacks from real Indian campuses.
             </p>
             <div style={{
-              display: 'flex', gap: 40, marginBottom: 36,
-              paddingBottom: 32, borderBottom: '1px solid #1e1e1e'
+              display: 'flex', gap: 40, marginBottom: 28,
+              paddingBottom: 24, borderBottom: '1px solid #1e1e1e'
             }}>
               {[
                 { n: '₹1.25L Cr', l: 'lost to scams annually' },
