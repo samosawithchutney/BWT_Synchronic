@@ -180,7 +180,7 @@ export default function Analyzer() {
                       </div>
                     )}
                   </div>
-                  <div style={s({ textAlign: 'right', color: '#374151', fontSize: 11, marginTop: 4 })}>{msg.length} chars</div>
+
                 </div>
                 <div style={{ marginBottom: 20 }}>
                   <div style={s({ fontSize: 10, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#374151', marginBottom: 8 })}>Try an example</div>
@@ -201,7 +201,21 @@ export default function Analyzer() {
                         } else {
                           setMsg(ex.text);
                         }
-                      }} style={{ padding: '5px 14px', borderRadius: 999, border: '1px solid #1e1e1e', background: 'transparent', color: '#9a9489', fontSize: 11, cursor: 'pointer', fontFamily: 'Sora,sans-serif' }}>{ex.label}</button>
+                      }}
+                        onMouseEnter={e => { e.target.style.borderColor = '#e63946'; e.target.style.background = 'rgba(230,57,70,0.08)' }}
+                        onMouseLeave={e => { e.target.style.borderColor = '#2a2a2a'; e.target.style.background = '#141414' }}
+                        style={{
+                          padding: '7px 16px',
+                          borderRadius: 999,
+                          border: '1px solid #2a2a2a',
+                          background: '#141414',
+                          color: '#f5f0e8',
+                          fontSize: 12,
+                          fontFamily: 'Sora, sans-serif',
+                          cursor: 'pointer',
+                          letterSpacing: '0.02em',
+                          transition: 'border-color 0.2s, background 0.2s',
+                        }}>{ex.label}</button>
                     ))}
                   </div>
                 </div>

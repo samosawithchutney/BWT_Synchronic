@@ -1,5 +1,9 @@
 import { useState } from 'react'
-const STEPS = ['Download the zip', 'Unzip the file', 'Open chrome://extensions', 'Enable Developer Mode', 'Click Load unpacked', 'Open WhatsApp Web']
+const STEPS = [
+  'Download + unzip the extension folder',
+  'Go to chrome://extensions → Enable Developer Mode → Load unpacked',
+  'Open WhatsApp Web or Outlook — you are protected',
+]
 export default function Extension() {
   const [busy, setBusy] = useState(false)
   const [done, setDone] = useState(false)
@@ -26,9 +30,34 @@ export default function Extension() {
             One install.<br /><em style={{ fontStyle: 'italic', color: '#e63946' }}>Two surfaces protected.</em>
           </h2>
           <p style={{ fontFamily: 'Sora,sans-serif', fontSize: 14, lineHeight: 1.75, color: '#9a9489', marginBottom: 32, maxWidth: 380 }}>Install once. CampusGuard silently watches every incoming WhatsApp message and college email — flagging scams before you read them. No manual steps. No configuration.</p>
+          <div style={{ display: 'flex', gap: 10, marginBottom: 24, flexWrap: 'wrap' }}>
+            {[
+              { icon: '💬', label: 'WhatsApp Web' },
+              { icon: '📧', label: 'Outlook Web + Desktop' },
+              { icon: '🤖', label: 'llama-3.3-70b' },
+            ].map(p => (
+              <div key={p.label} style={{
+                display: 'flex', alignItems: 'center', gap: 7,
+                border: '1px solid #1e1e1e', borderRadius: 999,
+                padding: '6px 14px', fontFamily: 'Sora, sans-serif',
+                fontSize: 12, color: '#9a9489', background: '#111'
+              }}>
+                <span>{p.icon}</span><span>{p.label}</span>
+              </div>
+            ))}
+          </div>
           <button onClick={dl} disabled={busy} style={{ padding: '14px 32px', borderRadius: 8, border: 'none', background: done ? '#52b788' : busy ? 'rgba(230,57,70,0.4)' : '#e63946', color: '#f5f0e8', fontSize: 13, fontFamily: 'Sora,sans-serif', fontWeight: 500, cursor: busy ? 'not-allowed' : 'pointer', letterSpacing: '0.04em' }}>
             {done ? 'Downloaded!' : busy ? 'Packaging...' : 'Download Extension'}
           </button>
+          <div style={{
+            marginTop: 14, padding: '10px 14px',
+            background: 'rgba(244,162,97,0.07)',
+            border: '1px solid rgba(244,162,97,0.15)',
+            borderRadius: 8, fontFamily: 'Sora, sans-serif',
+            fontSize: 11, color: '#f4a261', lineHeight: 1.6
+          }}>
+            ⚠️ After installing, open <strong>content.js</strong> and <strong>outlook_content.js</strong> and add your Groq API key before using.
+          </div>
         </div>
         <div>
           <div style={{ fontFamily: 'Sora,sans-serif', fontSize: 10, color: '#9a9489', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 24 }}>How to install</div>

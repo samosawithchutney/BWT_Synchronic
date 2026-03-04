@@ -5,6 +5,7 @@ import Features from './components/Features'
 import Extension from './components/Extension'
 import Footer from './components/Footer'
 import DemoSimulator from './components/DemoSimulator'
+import TheStory from './components/TheStory'
 
 export default function App() {
   const ref = useRef(null)
@@ -24,23 +25,39 @@ export default function App() {
             <h1 style={{ fontFamily: 'Playfair Display,serif', fontSize: 'clamp(44px,5.5vw,72px)', fontWeight: 700, lineHeight: 1.08, color: '#f5f0e8', marginBottom: 28, letterSpacing: '-0.02em' }}>
               Your campus.<br /><em style={{ fontStyle: 'italic', color: '#e63946' }}>Their target.</em><br />Our shield.
             </h1>
-            <p style={{ fontFamily: 'Sora,sans-serif', fontSize: 16, lineHeight: 1.75, color: '#9a9489', marginBottom: 40, maxWidth: 440 }}>
-              CampusGuard detects fake internship offers, WhatsApp group scams, and phishing emails — before you pay, click, or respond. Built on real attacks from real Indian campuses.
+            <p style={{ fontFamily: 'Sora,sans-serif', fontSize: 16, lineHeight: 1.75, color: '#9a9489', marginBottom: 36, maxWidth: 440 }}>
+              CampusGuard catches fake internship offers, WhatsApp payment traps, and phishing emails — before you pay. Built on real attacks from real Indian campuses.
             </p>
+            <div style={{
+              display: 'flex', gap: 40, marginBottom: 36,
+              paddingBottom: 32, borderBottom: '1px solid #1e1e1e'
+            }}>
+              {[
+                { n: '₹1.25L Cr', l: 'lost to scams annually' },
+                { n: '600M+', l: 'WhatsApp users at risk' },
+                { n: '3', l: 'surfaces protected' },
+              ].map(s => (
+                <div key={s.n}>
+                  <div style={{
+                    fontFamily: 'Playfair Display, serif',
+                    fontSize: 28, fontWeight: 700,
+                    color: '#f5f0e8', lineHeight: 1
+                  }}>{s.n}</div>
+                  <div style={{
+                    fontFamily: 'Sora, sans-serif',
+                    fontSize: 11, color: '#9a9489',
+                    marginTop: 5, letterSpacing: '0.04em'
+                  }}>{s.l}</div>
+                </div>
+              ))}
+            </div>
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
               <button onClick={go} style={{ background: '#e63946', color: '#f5f0e8', border: 'none', borderRadius: 8, padding: '14px 32px', fontSize: 13, fontFamily: 'Sora,sans-serif', fontWeight: 500, cursor: 'pointer' }}>Analyze a Message</button>
               <a href="#extension" style={{ display: 'inline-flex', alignItems: 'center', border: '1px solid #1e1e1e', borderRadius: 8, padding: '14px 28px', fontSize: 13, fontFamily: 'Sora,sans-serif', color: '#9a9489', textDecoration: 'none' }}>Get Extension</a>
             </div>
-            <div style={{ display: 'flex', gap: 40, marginTop: 56, paddingTop: 32, borderTop: '1px solid #1e1e1e', flexWrap: 'wrap' }}>
-              {[{ n: '₹1.25L Cr', l: 'lost annually' }, { n: '3 surfaces', l: 'protected' }, { n: '6 langs', l: 'supported' }].map(s => (
-                <div key={s.n}>
-                  <div style={{ fontFamily: 'Playfair Display,serif', fontSize: 22, color: '#f5f0e8', fontWeight: 600 }}>{s.n}</div>
-                  <div style={{ fontFamily: 'Sora,sans-serif', fontSize: 11, color: '#9a9489', marginTop: 2, letterSpacing: '0.04em', textTransform: 'uppercase' }}>{s.l}</div>
-                </div>
-              ))}
-            </div>
+
           </div>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', transform: 'scale(0.82)', transformOrigin: 'center top' }}>
             <svg viewBox="0 0 340 480" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', maxHeight: 440 }}>
               <rect x="90" y="40" width="160" height="360" rx="22" stroke="#f5f0e8" strokeWidth="1.5" strokeDasharray="4 2" fill="none" opacity="0.7" />
               <rect x="100" y="68" width="140" height="284" rx="4" stroke="#f5f0e8" strokeWidth="0.8" fill="#111" opacity="0.5" />
@@ -86,6 +103,7 @@ export default function App() {
         </div>
       </section>
       <DemoSimulator analyzerRef={ref} />
+      <TheStory />
       <div ref={ref}><Analyzer /></div>
       <Features />
       <Extension />
