@@ -24,7 +24,7 @@ export default function Navbar({ onAnalyze }) {
           <path d="M9 12l2 2 4-4" stroke="#e63946" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
         <span style={{ color: '#f5f0e8', fontSize: 13, fontWeight: 500, letterSpacing: '0.06em' }}>
-          IS THIS REAL
+          CAMPUSGUARD
         </span>
       </div>
 
